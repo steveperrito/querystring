@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+  module.exports = function(grunt) {
   grunt.initConfig({
     info: grunt.file.readJSON('bower.json'),
     meta: {
