@@ -24,93 +24,93 @@ querystring.parse(); //no argument passed in assumes window.location.search
 ```
 
 ```javascript
-querystring.parse('foo=bar&baz=qux&baz=quux&corge')
+querystring.parse('foo=bar&baz=qux&baz=quux&corge');
 // returns { foo: 'bar', baz: ['qux', 'quux'], corge: '' }
 ```
 
 ###Stringify
 ```javascript
-querystring.stringify({ foo: 'bar', baz: ['qux', 'quux'], corge: '' })
+querystring.stringify({ foo: 'bar', baz: ['qux', 'quux'], corge: '' });
 // returns 'foo=bar&baz=qux&baz=quux&corge='
 ```
 
 ```javascript
-querystring.stringify({ foo: 'bar', baz: ['qux', 'quux'], corge: '' }, 'http://www.google.com')
+querystring.stringify({ foo: 'bar', baz: ['qux', 'quux'], corge: '' }, 'http://www.google.com');
 // returns 'http://www.google.com?foo=bar&baz=qux&baz=quux&corge='
 ```
 
 ###Add
 ```javascript
 //assuming window.location.search has jack=jack
-querystring.add({ foo: 'bar', baz: ['qux', 'quux'], corge: '' })
+querystring.add({ foo: 'bar', baz: ['qux', 'quux'], corge: '' });
 // returns '?jack=jack&foo=bar&baz=qux&baz=quux&corge='
 ```
 
 ```javascript
 //assuming window.location.search has jack=jack
-querystring.add({ foo: 'bar', baz: ['qux', 'quux'], corge: '' }, 'http://www.google.com')
+querystring.add({ foo: 'bar', baz: ['qux', 'quux'], corge: '' }, 'http://www.google.com');
 // returns 'http://www.google.com?jack=jack&foo=bar&baz=qux&baz=quux&corge='
 ```
 
 ```javascript
 //assuming window.location.search has jack=jack
-querystring.add('foo', 'bar')
+querystring.add('foo', 'bar');
 // returns 'jack=jack&foo=bar'
 ```
 
 ```javascript
 //assuming window.location.search has jack=jack
-querystring.add('foo', 'bar', false) //passing false returns an object instead of a string
+querystring.add('foo', 'bar', false); //passing false returns an object instead of a string
 // returns '{jack:jack, foo:bar}'
 ```
 
 ###Remove
 ```javascript
 //assuming window.location.search has jack=jack
-querystring.remove('jack')
+querystring.remove('jack');
 // returns ''
 ```
 
 ```javascript
 //assuming window.location.search has jack=jack&bob=bob
-querystring.remove('jack', 'http://www.google.com')
+querystring.remove('jack', 'http://www.google.com');
 // returns 'http://www.google.com?bob=bob'
 ```
 
 ```javascript
 //assuming window.location.search has jack=jack&bob=bob
-querystring.remove(['jack', 'bob'], 'http://www.google.com')
+querystring.remove(['jack', 'bob'], 'http://www.google.com');
 // returns 'http://www.google.com?'
 ```
 
 ```javascript
 //assuming window.location.search has jack=jack&bob=bob&jane=jane
-querystring.remove(['jack', 'bob'], false) //passing false returns an object instead of a string
+querystring.remove(['jack', 'bob'], false); //passing false returns an object instead of a string
 // returns {jane: 'jane'}
 ```
 
 ###Replace
 ```javascript
 //assuming window.location.search has jack=jack
-querystring.replace('jack', 'dunno')
+querystring.replace('jack', 'dunno');
 // returns 'jack=dunno'
 ```
 
 ```javascript
 //assuming window.location.search has jack=jack
-querystring.replace('jack', 'dunno', 'http://www.google.com')
+querystring.replace('jack', 'dunno', 'http://www.google.com');
 // returns 'http://www.google.com?jack=dunno'
 ```
 
 ```javascript
 //assuming window.location.search has jack=jack
-querystring.replace('jack', 'dunno', false) //passing false returns an object instead of a string
+querystring.replace('jack', 'dunno', false); //passing false returns an object instead of a string
 // returns {jack : 'dunno'}
 ```
 
 ```javascript
 //assuming window.location.search has jack=jack&bob=bob
-querystring.replace({jack : 'dunno', bob : 'thatGuy'}, 'http://www.google.com')
+querystring.replace({jack : 'dunno', bob : 'thatGuy'}, 'http://www.google.com');
 // returns 'http://www.google.com?jack=dunno&bob=thatGuy'
 ```
 
